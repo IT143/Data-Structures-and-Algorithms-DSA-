@@ -18,3 +18,12 @@ class Solution {
         return secondLargest;
     }
 };
+
+/*
+It finds the second largest number in the array.
+The largest stores the biggest value so far secondLargest stores the second biggest
+Loop through the array: 
+If a number is bigger than the largest, update both
+If it’s smaller than the largest but bigger than secondLargest, update secondLargest
+Return secondLargest.
+*/
