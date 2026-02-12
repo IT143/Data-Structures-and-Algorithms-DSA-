@@ -17,7 +17,7 @@ void change(int num) {    // This function gets a COPY of the number
 // Not preferred for large-sized data structures, as it involves copying the value
 
 /*
-Pass by value means: When you send a variable to a function, the function gets a copy of it.
+Pass-by-value means that when you send a variable to a function, the function gets a copy of it.
 If the function changes it, only the copy changes.
 The original variable stays the same.
 */
