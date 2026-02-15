@@ -8,9 +8,10 @@ int main() {
 }
 
 void helloWorld (int n) {  // Recursive Function: A function which calls itself repeatedly until the base condition is met
-  if (n == 0) {    // Base Case (Stopping Condition) : Stops recursion when n == 0
+  if (n == 0) {    // Base Case (Stopping Condition) : Stops recursion when n == 0 prevents infinity loops
     return;
   }
   cout << "Hello World!" << endl;    // Prints Hello World before making the next call
   helloWorld(n-1);  // Recursive Case: Calls the function with n-1
 }
+
