@@ -24,6 +24,10 @@ Descending Phase: The function keeps calling smaller functions (f(n-1)). The sta
 Ascending Phase: When it reaches n = 1, the function stops calling. Functions finish one by one. The stack shrinks and returns.
 */
 
+// Tree Recursion: When the function calls itself more than once within its body, forming a tree-like structure.
+// Here we called the function twice within itself.
+// Use tree recursion when each step splits into multiple smaller subproblems.
+
 /*
 Output: 
 F(3)'s Stack Frame Pushed
