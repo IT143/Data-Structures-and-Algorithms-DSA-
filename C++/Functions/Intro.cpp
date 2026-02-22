@@ -2,7 +2,7 @@
 using namespace std;
 //Keyword(Return Type) Function Name Parameters(Inputs)
 
-int square(int x);  //Function Declaration (Introduces a function to the comppiler)
+int square(int x);  //Function Declaration (Introduces a function to the compiler)
 
 int main() {
   int a;
@@ -24,3 +24,5 @@ int square(int x) {
 5. Simpler testing (Checks each part independently)
 6. Team Friendly (Multiple people can work in parallel) 
 */
+
+// Stack Overflow: An error that occurs when too many function calls use up all the stack memory, often due to infinite or excessive recursion.
