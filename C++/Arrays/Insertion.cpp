@@ -27,7 +27,7 @@ int main() {
     display(arr);
 
     int pos;
-    cout << "\nEnter the position before which you want to insert: ";
+    cout << "\nEnter the position: ";
     cin >> pos;
 
     position(arr, x, pos);
@@ -62,11 +62,11 @@ vector<int> position(vector<int> &arr, int x, int pos) {
 
     arr.push_back(0);
 
-    for (int i = arr.size() - 1; i > pos-1; i--) {    // Shift elements right from the position
+    for (int i = arr.size() - 1; i > pos; i--) {    // Shift elements right from the position
         arr[i] = arr[i-1];
     }
 
-    arr[pos-1] = x;
+    arr[pos] = x;
     return arr;
 }
 
