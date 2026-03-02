@@ -1,63 +1,79 @@
 #include <iostream>
 using namespace std;
-#include <vector>
+#include <vector> // Compiler recognises vector, which is a dynamic array, i.e., it can shrink or expand
+
+
+// vector_name.push_back(value) - adds the element at the end of the vector and increases its size by 1
 
 vector<int> beginning(vector<int> &arr, int x);
 vector<int> position(vector<int> &arr, int x, int pos);
 vector<int> end(vector<int> &arr, int x);
+vector<int> display(vector<int> &arr);
 
 int main() {
-  vector<int> arr = {10,20,30,40,50};
-  cout << "Before Insertion: ";
-  for (int i = 0; i < arr.size(); i++) {
-    cout << arr[i] << " ";
-  }
+    vector<int> arr = {10,20,30,40,50};  // Initializing an array
 
-  int x;
-  cout << "\nEnter the element to insert: ";
-  cin >> x;
-  beginning(arr, x);
-  cout << "After insertion at beginning: ";
-  for (int i = 0; i < arr.size()+1; i++) {
-    cout << arr[i] << " ";
-  }
+    cout << "Before Insertion: ";
+    display(arr);
 
-  int pos;
-  cout << "\nEnter the positon before which you want to insert: ";
-  cin >> pos;
-  position(arr,x,pos);
-  cout << "\nAfter insertion at given postion: ";
-  for (int i = 0; i < arr.size()+1; i++) {
-    cout << arr[i] << " ";
-  }
-  
-  end(arr, x);
-  cout << "\nAfter insertion at end: ";
-  for (int i = 0; i < arr.size()+1; i++) {
-    cout << arr[i] << " ";
-  }
+    int x;
+    cout << "\nEnter the element to insert: ";
+    cin >> x;
+
+    beginning(arr, x);
+    display(arr);
+
+    end(arr, x);
+    display(arr);
+
+    int pos;
+    cout << "\nEnter the position before which you want to insert: ";
+    cin >> pos;
+
+    position(arr, x, pos);
+    display(arr);
+
+    return 0;
 }
 
 vector<int> beginning(vector<int> &arr, int x) {
-  for (int i = arr.size() - 1; i >= 0; i--) {
-    arr[i+1] = arr[i];
-  }
-  arr[0] = x;
-  return arr;
-}
+    cout << "\nAfter inserting at the beginning: ";
 
-vector<int> position(vector<int> &arr, int x, int pos) {
-  for (int i = arr.size()-1; i >= pos; i--) {
-    arr[i] = arr[i-1];
-  }
-  arr[pos-1] = x;
-  return arr;
+    arr.push_back(0);
+
+    for (int i = arr.size() - 1; i > 0; i--) {      // Each element moves right to make space at index 0.
+        arr[i] = arr[i-1];
+    }
+
+    arr[0] = x;    // Insert new element at index 0
+    return arr;
 }
 
 vector<int> end(vector<int> &arr, int x) {
-  for (int i = arr.size() - 1; i >= 0; i--) {
-    arr[i+1] = arr[i];
-  }
-  arr[arr.size()] = x;
-  return arr;
+    cout << "\nAfter inserting at the end: ";
+
+    arr.push_back(x);     // No shifting needed because end already has free expandable space
+
+    return arr;
+}
+
+vector<int> position(vector<int> &arr, int x, int pos) {
+    cout << "\nAfter inserting by position: ";
+
+    arr.push_back(0);
+
+    for (int i = arr.size() - 1; i > pos-1; i--) {    // Shift elements right from the position
+        arr[i] = arr[i-1];
+    }
+
+    arr[pos-1] = x;
+    return arr;
+}
+
+vector<int> display(vector<int> &arr) {
+    for (int i = 0; i < arr.size(); i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    return arr;
 }
