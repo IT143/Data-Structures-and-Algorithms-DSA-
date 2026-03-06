@@ -1,15 +1,18 @@
 /*
+In procedural programming, the code is organised around functions.
+In object-oriented programming, the code is organised around objects.
 Class - User-Defined Data Type.
 Blueprint for objects.
 For example, Car is a class and BMW, Audi, McLaren, Ferrari, Mercedes are objects.
+Objects are instances of a class
 */
 
 #include <iostream>
 using namespace std;
 
 class Cars {      // Class name
-  public:          // Access Specifier: Accessibility and visibility of class members, i.e., attributes
-  string name;      // Attributes
+  public:          // Access Specifier: Accessibility and visibility of class members, i.e., attributes outside the class
+  string name;      // Attributes: Variables declared within a class
   string colour;
 };
 
